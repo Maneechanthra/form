@@ -26,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
         if (snapshot.hasError) {
           return Scaffold(
-            appBar: AppBar(title: Text("error")),
+            appBar: AppBar(title: const Text("error")),
             body: Center(
               child: Text("${snapshot.error}"),
             ),
@@ -41,13 +41,13 @@ class _LoginPageState extends State<LoginPage> {
             )),
             body: SingleChildScrollView(
               child: Padding(
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 child: Form(
                   key: formkey,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         "อีเมล",
                         style: TextStyle(fontSize: 18),
                       ),
@@ -60,10 +60,10 @@ class _LoginPageState extends State<LoginPage> {
                           onSaved: (email) {
                             profile.email = email;
                           }),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Text(
+                      const Text(
                         "รหัสผ่าน",
                         style: TextStyle(fontSize: 18),
                       ),
@@ -75,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
                           profile.password = password;
                         },
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       GestureDetector(
@@ -93,10 +93,10 @@ class _LoginPageState extends State<LoginPage> {
                                     (value) => {
                                       formkey.currentState!.reset(),
                                       Fluttertoast.showToast(
-                                          msg: "สร้างบัญชีสำเร็จ"),
+                                          msg: "เข้าสู่ระบบสำเร็จ"),
                                       Navigator.pushReplacement(context,
                                           MaterialPageRoute(builder: (context) {
-                                        return WelcomeScreen();
+                                        return const WelcomeScreen();
                                       }))
                                     },
                                   );
@@ -119,10 +119,10 @@ class _LoginPageState extends State<LoginPage> {
                         child: Container(
                           width: double.infinity,
                           height: 50,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Colors.blue,
                           ),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               "ลงชื่อเข้าใช้งาน",
                               style:

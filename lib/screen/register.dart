@@ -25,7 +25,7 @@ class _RegisterPageState extends State<RegisterPage> {
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
         if (snapshot.hasError) {
           return Scaffold(
-            appBar: AppBar(title: Text("error")),
+            appBar: AppBar(title: const Text("error")),
             body: Center(
               child: Text("${snapshot.error}"),
             ),
@@ -40,13 +40,13 @@ class _RegisterPageState extends State<RegisterPage> {
             )),
             body: SingleChildScrollView(
               child: Padding(
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 child: Form(
                   key: formkey,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         "อีเมล",
                         style: TextStyle(fontSize: 18),
                       ),
@@ -59,10 +59,10 @@ class _RegisterPageState extends State<RegisterPage> {
                           onSaved: (email) {
                             profile.email = email;
                           }),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Text(
+                      const Text(
                         "รหัสผ่าน",
                         style: TextStyle(fontSize: 18),
                       ),
@@ -74,7 +74,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           profile.password = password;
                         },
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       GestureDetector(
@@ -96,7 +96,8 @@ class _RegisterPageState extends State<RegisterPage> {
                                       Navigator.pushReplacement(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) => HomePgae()))
+                                              builder: (context) =>
+                                                  const HomePgae()))
                                     },
                                   );
                             } on FirebaseAuthException catch (e) {
@@ -116,10 +117,10 @@ class _RegisterPageState extends State<RegisterPage> {
                         child: Container(
                           width: double.infinity,
                           height: 50,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Colors.blue,
                           ),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               "ลงทะเบียน",
                               style:
