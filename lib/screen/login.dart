@@ -17,15 +17,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final formkey = GlobalKey<FormState>();
   Profile profile = new Profile();
-  // final Future<FirebaseApp> firebase = Firebase.initializeApp();
-
-  late final Future<FirebaseApp> firebase;
-
-  @override
-  void initState() {
-    super.initState();
-    firebase = Firebase.initializeApp();
-  }
+  final Future<FirebaseApp> firebase = Firebase.initializeApp();
 
   @override
   Widget build(BuildContext context) {
